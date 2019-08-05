@@ -1,6 +1,24 @@
-# Định Nghĩa qua ví dụ
+# TextView Basic
 
-## Simple Example
+<https://flutter.dev/docs/get-started/codelab>
+
+![text basic](text.jpg)
+
+## App Dependencies (library)
+
+- Thêm trong file: **pubspec.yaml**
+
+```yaml
+dependencies:
+  // ...
+  // Thêm tại đây
+  english_words: ^3.1.0
+```
+
+- **$ Packages get**: cài đặt Dependency mới
+- **$ Packages upgrade**: update Dependency mới
+
+## Start
 
 ```dart
 import 'package:flutter/material.dart';
@@ -20,18 +38,19 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: Scaffold(
-        appBar: AppBar(
-          title: Text('Welcome to Flutter'),
-        ),
+          appBar: AppBar(
+            title: Text('Welcome to Flutter'),
+          ),
           body: Center(
-            child: RandomWords()
+              child: RandomWords()
           )
       ),
     );
   }
 }
+```
 
-
+```dart
 // StatefulWidget: Widget (UI) thay đổi theo Objects bên trong
 class RandomWords extends StatefulWidget {
   @override
@@ -44,27 +63,12 @@ class RandomWordState extends State<RandomWords> {
   @override
   Widget build(BuildContext context) {
     // "Text" thay đổi theo "wordPair"
-    return Text(wordPair.asPascalCase);
+    return Text(
+      wordPair.asPascalCase,
+      style: TextStyle(fontSize: 50),
+    );
   }
 }
 ```
 
-## Notes
-
-### StatelessWidget: Không tự thay đổi giao diện
-
-### StatefulWidget: Giao diện thay đổi theo Objects
-
-## App Dependencies (library)
-
-- Thêm trong file: **pubspec.yaml**
-
-```yaml
-dependencies:
-  // ...
-  // Thêm tại đây
-  english_words: ^3.1.0
-```
-
-- Chạy để cài đặt Dependency mới: **$ Packages get**
-- Chạy để update Dependency mới: **$ Packages upgrade**
+---
