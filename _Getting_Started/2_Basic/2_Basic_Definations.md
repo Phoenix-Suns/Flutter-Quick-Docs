@@ -1,6 +1,32 @@
 # 1 một số Định Nghĩa
 
-## Simple Example
+## Simple Example: Không dùng Theme
+
+```dart
+// simple main
+void main() {
+  runApp(
+      Container(
+        color: Colors.red,
+        child: Text('Hello!'),
+      )
+  );
+}
+```
+
+```dart
+// simple Widget
+Widget helloRectangle() {
+  return Container(
+    color: Colors.green,
+    child: Text('Hello!'),
+  );
+}
+```
+
+## Simple Example 2: Material Theme
+
+(hiện Text ở giữa)
 
 ```dart
 import 'package:flutter/material.dart';
@@ -49,12 +75,6 @@ class RandomWordState extends State<RandomWords> {
 }
 ```
 
-## Notes
-
-### StatelessWidget: Không tự thay đổi giao diện
-
-### StatefulWidget: Giao diện thay đổi theo Objects
-
 ## App Dependencies (library)
 
 - Thêm trong file: **pubspec.yaml**
@@ -68,3 +88,16 @@ dependencies:
 
 - Chạy để cài đặt Dependency mới: **$ Packages get**
 - Chạy để update Dependency mới: **$ Packages upgrade**
+
+## Flutter Inspector - Debug UI
+
+- Menu View/ Window Tools/ Flutter Inspector
+- <https://flutter.dev/docs/development/tools/devtools/inspector>
+- <https://www.youtube.com/watch?time_continue=268&v=ZwN7stRkwFs>
+
+## Widget: 1 phần của giao diện
+
+### StatelessWidget: Giao diện không tự thay đổi (immutable: bất biến)
+
+### StatefulWidget: Giao diện thay đổi theo State Objects
+
