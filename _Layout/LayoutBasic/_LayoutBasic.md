@@ -12,6 +12,11 @@
   - [SizedBox widget: Đổi kích thước, Tạo Space có kích cỡ](#sizedbox-widget-%c4%90%e1%bb%95i-k%c3%adch-th%c6%b0%e1%bb%9bc-t%e1%ba%a1o-space-c%c3%b3-k%c3%adch-c%e1%bb%a1)
   - [Spacer widget: Tạo Space full size](#spacer-widget-t%e1%ba%a1o-space-full-size)
   - [Wrap: Wrap Children, Tự động xuống hàng](#wrap-wrap-children-t%e1%bb%b1-%c4%91%e1%bb%99ng-xu%e1%bb%91ng-h%c3%a0ng)
+  - [Stack - Widget chồng nhau](#stack---widget-ch%e1%bb%93ng-nhau)
+    - [Fit: kích thước children](#fit-k%c3%adch-th%c6%b0%e1%bb%9bc-children)
+    - [alignment: Canh chỉnh children](#alignment-canh-ch%e1%bb%89nh-children)
+    - [Positioned: Vị trí tuyệt đối của childen](#positioned-v%e1%bb%8b-tr%c3%ad-tuy%e1%bb%87t-%c4%91%e1%bb%91i-c%e1%bb%a7a-childen)
+    - [Overflow: cho phép child tràn ra ngoài](#overflow-cho-ph%c3%a9p-child-tr%c3%a0n-ra-ngo%c3%a0i)
 
 ## Row/Column: (~LinearLayout orientation) Hướng của các con
 
@@ -194,3 +199,48 @@ _buildWrap() {
   );
 }
 ```
+
+## Stack - Widget chồng nhau
+
+![stack]("stack.png")
+
+```dart
+Stack(
+  fit: StackFit.expand,
+  alignment: AlignmentDirectional.bottomCenter,
+  overflow: Overflow.clip,
+  children: <Widget>[
+    GreenBox(),
+    RedBox(),
+    BlueBox(),
+  ],
+);
+```
+
+### Fit: kích thước children
+
+- StackFit.loose: bình thường
+- StackFit.expand: Full size
+
+### alignment: Canh chỉnh children
+
+### Positioned: Vị trí tuyệt đối của childen
+
+```dart
+Stack(
+  children: <Widget>[
+    Positioned(child: BlueBox(),
+      top: -20,
+      right: 100,
+    ),
+  ],
+  overflow: overflow,
+),
+```
+
+### Overflow: cho phép child tràn ra ngoài
+
+- Overflow.clip: Không hiển thị view tràn
+- Overflow.visible: hiển thị view tràn
+
+---
