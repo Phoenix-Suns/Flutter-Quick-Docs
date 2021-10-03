@@ -2,23 +2,23 @@
 
 ![layout basic](layout_basic.jpg)
 
-- [Layout Basic - Layout Cơ bản](#layout-basic---layout-c%c6%a1-b%e1%ba%a3n)
-  - [Row/Column: (~LinearLayout orientation) Hướng của các con](#rowcolumn-linearlayout-orientation-h%c6%b0%e1%bb%9bng-c%e1%bb%a7a-c%c3%a1c-con)
-  - [mainAxisSize (Kích thước trục chính): (~match_parent ~ wrap_content) Kích thước bao bọc](#mainaxissize-k%c3%adch-th%c6%b0%e1%bb%9bc-tr%e1%bb%a5c-ch%c3%adnh-matchparent--wrapcontent-k%c3%adch-th%c6%b0%e1%bb%9bc-bao-b%e1%bb%8dc)
-  - [mainAxisAlignment (căn chỉnh trục chính): ~Gravity](#mainaxisalignment-c%c4%83n-ch%e1%bb%89nh-tr%e1%bb%a5c-ch%c3%adnh-gravity)
-  - [crossAxisAlignment (căn chỉnh trục chéo)](#crossaxisalignment-c%c4%83n-ch%e1%bb%89nh-tr%e1%bb%a5c-ch%c3%a9o)
-  - [Flexible widget (linh hoạt): (~LayoutWeight, ~FlexBox) flex box](#flexible-widget-linh-ho%e1%ba%a1t-layoutweight-flexbox-flex-box)
-  - [Expanded widget (mở rộng): (~LayoutWeight=1) Tự mở rộng tối đa](#expanded-widget-m%e1%bb%9f-r%e1%bb%99ng-layoutweight1-t%e1%bb%b1-m%e1%bb%9f-r%e1%bb%99ng-t%e1%bb%91i-%c4%91a)
-  - [SizedBox widget: Đổi kích thước, Tạo Space có kích cỡ](#sizedbox-widget-%c4%90%e1%bb%95i-k%c3%adch-th%c6%b0%e1%bb%9bc-t%e1%ba%a1o-space-c%c3%b3-k%c3%adch-c%e1%bb%a1)
-  - [Spacer widget: Tạo Space full size](#spacer-widget-t%e1%ba%a1o-space-full-size)
-  - [Wrap: Wrap Children, Tự động xuống hàng](#wrap-wrap-children-t%e1%bb%b1-%c4%91%e1%bb%99ng-xu%e1%bb%91ng-h%c3%a0ng)
-  - [Stack - Widget chồng nhau](#stack---widget-ch%e1%bb%93ng-nhau)
-    - [Fit: kích thước children](#fit-k%c3%adch-th%c6%b0%e1%bb%9bc-children)
-    - [alignment: Canh chỉnh children](#alignment-canh-ch%e1%bb%89nh-children)
-    - [Positioned: Vị trí tuyệt đối của childen](#positioned-v%e1%bb%8b-tr%c3%ad-tuy%e1%bb%87t-%c4%91%e1%bb%91i-c%e1%bb%a7a-childen)
-    - [Overflow: cho phép child tràn ra ngoài](#overflow-cho-ph%c3%a9p-child-tr%c3%a0n-ra-ngo%c3%a0i)
+- [Layout Basic - Layout Cơ bản](#layout-basic---layout-cơ-bản)
+  - [Row/Column: (giống LinearLayout orientation) Hướng của các con](#rowcolumn-giống-linearlayout-orientation-hướng-của-các-con)
+  - [mainAxisSize (Kích thước trục chính): (giống match_parent/ wrap_content) Kích thước bao bọc](#mainaxissize-kích-thước-trục-chính-giống-match_parent-wrap_content-kích-thước-bao-bọc)
+  - [mainAxisAlignment (căn chỉnh trục chính): giống Gravity](#mainaxisalignment-căn-chỉnh-trục-chính-giống-gravity)
+  - [crossAxisAlignment (căn chỉnh trục chéo)](#crossaxisalignment-căn-chỉnh-trục-chéo)
+  - [Flexible widget (linh hoạt): (giống LayoutWeight, FlexBox) flex box](#flexible-widget-linh-hoạt-giống-layoutweight-flexbox-flex-box)
+  - [Expanded widget (mở rộng): (giống LayoutWeight=1) Tự mở rộng tối đa](#expanded-widget-mở-rộng-giống-layoutweight1-tự-mở-rộng-tối-đa)
+  - [SizedBox widget: Đổi kích thước, Tạo Space có kích cỡ](#sizedbox-widget-đổi-kích-thước-tạo-space-có-kích-cỡ)
+  - [Spacer widget: Tạo Space full size](#spacer-widget-tạo-space-full-size)
+  - [Wrap: Wrap Children, Tự động xuống hàng](#wrap-wrap-children-tự-động-xuống-hàng)
+  - [Stack - Widget chồng nhau](#stack---widget-chồng-nhau)
+    - [Fit: kích thước children](#fit-kích-thước-children)
+    - [alignment: Canh chỉnh children](#alignment-canh-chỉnh-children)
+    - [Positioned: Vị trí tuyệt đối của childen](#positioned-vị-trí-tuyệt-đối-của-childen)
+    - [Overflow: cho phép child tràn ra ngoài](#overflow-cho-phép-child-tràn-ra-ngoài)
 
-## Row/Column: (~LinearLayout orientation) Hướng của các con
+## Row/Column: (giống LinearLayout orientation) Hướng của các con
 
 ![row colunm](row_colunm.png)
 
@@ -35,16 +35,17 @@ return Row(
 );
 ```
 
-## mainAxisSize (Kích thước trục chính): (~match_parent ~ wrap_content)  Kích thước bao bọc
+## mainAxisSize (Kích thước trục chính): (giống match_parent/ wrap_content) Kích thước bao bọc
 
 ![mainAxisSize](main_axis_size.jpg)
 
-- mainAxisSize: MainAxisSize.max
-- mainAxisSize: MainAxisSize.min
+- mainAxisSize: 
+  - MainAxisSize.max
+  - MainAxisSize.min
 
 ```dart
 Row(
-  mainAxisSize: mainAxisSize,
+  mainAxisSize: MainAxisSize.max,
   children: <Widget>[
     BlueBox(),
     BlueBox(),
@@ -53,21 +54,22 @@ Row(
 ),
 ```
 
-## mainAxisAlignment (căn chỉnh trục chính): ~Gravity
+## mainAxisAlignment (căn chỉnh trục chính): giống Gravity
 
 ![mainAxisAlignment](main_axis_alignment.jpg)
 
-1. mainAxisAlignment: MainAxisAlignment.start
-2. mainAxisAlignment: MainAxisAlignment.end
-3. mainAxisAlignment: MainAxisAlignment.center
-4. mainAxisAlignment: MainAxisAlignment.spaceAround
-5. mainAxisAlignment: MainAxisAlignment.spaceBetween
-6. mainAxisAlignment: MainAxisAlignment.spaceEvenly
+1. mainAxisAlignment:
+   1. MainAxisAlignment.start
+   2. MainAxisAlignment.end
+   3. MainAxisAlignment.center
+   4. MainAxisAlignment.spaceAround
+   5. MainAxisAlignment.spaceBetween
+   6. MainAxisAlignment.spaceEvenly
 
 ```dart
 Row(
   mainAxisSize: MainAxisSize.max,
-  mainAxisAlignment: mainAxisAlignment,
+  mainAxisAlignment: MainAxisAlignment.start,
   children: <Widget>[
     BlueBox(),
     BlueBox(),
@@ -80,15 +82,16 @@ Row(
 
 ![crossAxisAlignment](coss_axis_alignment.jpg)
 
-1. crossAxisAlignment: CrossAxisAlignment.start
-2. crossAxisAlignment: CrossAxisAlignment.end
-3. crossAxisAlignment: CrossAxisAlignment.center
-4. crossAxisAlignment: CrossAxisAlignment.baseline
-5. crossAxisAlignment: CrossAxisAlignment.stretch
+1. crossAxisAlignment:
+   1. CrossAxisAlignment.start
+   2. CrossAxisAlignment.end
+   3. CrossAxisAlignment.center
+   4. CrossAxisAlignment.baseline
+   5. CrossAxisAlignment.stretch
 
 ```dart
 Row(
-  crossAxisAlignment: crossAxisAlignment,
+  crossAxisAlignment: CrossAxisAlignment.start,
   children: [
     BlueBox(),
     BiggerBlueBox(),
@@ -107,7 +110,7 @@ crossAxisAlignment: CrossAxisAlignment.stretch,
 children: [ //No text ]
 ```
 
-## Flexible widget (linh hoạt): (~LayoutWeight, ~FlexBox) flex box
+## Flexible widget (linh hoạt): (giống LayoutWeight, FlexBox) flex box
 
 ![Flexible](flexible.jpg)
 
@@ -132,7 +135,7 @@ Row(
 ),
 ```
 
-## Expanded widget (mở rộng): (~LayoutWeight=1) Tự mở rộng tối đa
+## Expanded widget (mở rộng): (giống LayoutWeight=1) Tự mở rộng tối đa
 
 ![Expanded](expanded.png)
 

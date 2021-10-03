@@ -1,22 +1,17 @@
 import 'package:flutter/material.dart';
 
-class StackLayoutPage extends StatefulWidget {
-  @override
-  _StackLayoutPageState createState() => _StackLayoutPageState();
-}
+class ColorfulContainer extends StatelessWidget {
+  ColorfulContainer({this.child, this.height});
+  final Widget child;
+  final double height;
 
-class _StackLayoutPageState extends State<StackLayoutPage> {
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("Stack Layout"),
-      ),
-      body: Container(
-        color: Colors.grey[300],
-        child: ListView(children: <Widget>[]),
-      ),
+    return Container(
+      color: Colors.yellow[300],
+      child: this.child,
+      height: this.height,
     );
   }
+
 }
